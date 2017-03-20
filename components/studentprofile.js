@@ -1,9 +1,11 @@
 module.exports = function studentProfile(props){
+  return (
   <div>
+    <h1>{props.firstName} {props.lastName}</h1>
     <ul>
-      <li>{props.firstName} {props.lastName}</li>
-      <li>{props.birthdate}</li>
-      <li>{props.activity}</li>
+      <li>Date of Birth:{props.birthDate}</li>
+      <li>Activity: {props.activity}</li>
     </ul>
-  <div>
+  </div>
+  )
 }
