@@ -4,8 +4,8 @@
   "description": "SignMeUp rejig replacing handlebars with react",
   "main": "index.js",
   "scripts": {
-    "build": "browserify -t babelify index.js -o public/bundle.js",
-    "watch": "watchify -t babelify index.js -o public/bundle.js -dv",
+    "build": "browserify -t babelify client/index.js -o server/public/bundle.js",
+    "watch": "watchify -t babelify client/index.js -o server/public/bundle.js -dv",
     "knex": "knex"
   },
   "babel": {
@@ -36,6 +36,7 @@
   },
   "dependencies": {
     "babelify": "^7.3.0",
+    "express": "^4.15.2",
     "knex": "^0.12.8"
   }
 }
