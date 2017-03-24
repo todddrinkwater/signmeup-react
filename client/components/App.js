@@ -2,12 +2,12 @@ var React = require('react')
 const sheetRouter = require('sheet-router')
 var Login = require('./login')
 var Home = require('./home')
-var Student = require('./studentprofile')
+var AllStudents = require('./studentprofile')
 
 const router = sheetRouter({ default: '/' }, [
   ['/', () => Home],
   ['/login', () => Login],
-  ['/studentprofile', () => Student]
+  ['/studentprofile', () => AllStudents]
 ])
 
 module.exports = function App(props) {

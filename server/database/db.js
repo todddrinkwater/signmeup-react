@@ -20,6 +20,7 @@ function getStudentProfile(id) {
 getStudentProfile(1).then(function(res) {
   console.log(res);
 })
+
 //Retrieve Student Data from Knex DB
   // 1. require knex package -
     //   var config = require('./knexfile')[environment]
