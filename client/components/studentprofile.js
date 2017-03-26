@@ -1,5 +1,5 @@
 var React = require('react')
-
+var api = require('../../server/api')
 
 //View
 module.exports = function studentProfile(props){

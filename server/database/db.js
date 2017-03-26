@@ -1,5 +1,5 @@
 var environment = process.env.NODE_ENV || 'development'
-var config = require('../../knexfile')[environment]
+var config = require('../knexfile')[environment]
 var connection = require('knex')(config)
 
 module.exports = {
@@ -16,10 +16,6 @@ function getStudentProfile(id) {
   return studentData
 }
 
-
-getStudentProfile(1).then(function(res) {
-  console.log(res);
-})
 
 //Retrieve Student Data from Knex DB
   // 1. require knex package -

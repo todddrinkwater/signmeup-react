@@ -1,9 +1,10 @@
 var bodyParser = require('body-parser')
+var database = require('./database/db')
 
-function getStudent(id){
-  
-}
+//get student profile from db.js
+database.getStudentProfile(2)
+  .then(function(res) {
+    console.log(res);
+  })
 
-module.exports = {
-  getStudent
-}
+module.exports = database.getStudentProfile
