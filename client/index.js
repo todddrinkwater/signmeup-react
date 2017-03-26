@@ -11,7 +11,6 @@ var state = {
 }
 
 
-
 hrefHandler((click) => {
   state.path = click.pathname
   render(state)

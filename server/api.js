@@ -1,10 +1,30 @@
-var bodyParser = require('body-parser')
-var database = require('./database/db')
+import request from 'superagent'
 
-//get student profile from db.js
-database.getStudentProfile(2)
-  .then(function(res) {
-    console.log(res);
-  })
+var studentsUrl = 'http://localhost:3000/students'
 
-module.exports = database.getStudentProfile
+export default {
+  getStudents: getStudents,
+}
+
+function getStudents (callback) {
+  request
+    .get(studentsUrl)
+    .end(function (err, res) {
+      if (err) {
+        callback(err)
+      } else {
+        callback(null, res.body)
+      }
+    })
+}
+
+// var bodyParser = require('body-parser')
+// var database = require('./database/db')
+//
+// //get student profile from db.js
+// database.getStudentProfile(2)
+//   .then(function(res) {
+//     console.log(res);
+//   })
+//
+// module.exports = database.getStudentProfile
