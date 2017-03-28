@@ -9,7 +9,7 @@ var app = express()
 
 app.use(bodyParser.json())
 app.use(cors({origin: 'http://localhost:8080'}))
-app.use(express.static(path.join(__dirname, '../public')))
+app.use(express.static(path.join(__dirname, './public')))
 
 app.use('/students', students)
 

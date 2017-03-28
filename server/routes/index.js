@@ -3,8 +3,8 @@ var router = express.Router()
 
 var db = require('../database/db')
 
-router.get('/:id', function (req, res){
-  db.getStudentProfile(Number(req.params.id))
+router.get('/', function (req, res){
+  db.getStudentProfile()
   .then( profile => {
     res.json(profile)
   })

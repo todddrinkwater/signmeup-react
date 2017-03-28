@@ -1,8 +1,8 @@
 var React = require('react')
 const sheetRouter = require('sheet-router')
-var Login = require('./login')
-var Home = require('./home')
-var AllStudents = require('./studentprofile')
+var Login = require('./Login')
+var Home = require('./Home')
+var AllStudents = require('./StudentProfile')
 
 const router = sheetRouter({ default: '/' }, [
   ['/', () => Home],
@@ -13,7 +13,6 @@ const router = sheetRouter({ default: '/' }, [
 module.exports = function App(props) {
     var currentPath = props.path
     var MainComponent = router(currentPath)
-    console.log(MainComponent);
   return (
     <div>
       <div className='navbar'>

@@ -10,6 +10,13 @@ var state = {
  path: '/'
 }
 
+// document.addEventListener('DOMContentLoaded', () => {
+//   api.getStudentProfile( (profile) => {
+//     state.profile = profile
+//     render()
+//   })
+// })
+
 
 hrefHandler((click) => {
   state.path = click.pathname
