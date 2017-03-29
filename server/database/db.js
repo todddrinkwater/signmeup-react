@@ -3,7 +3,8 @@ var config = require('../knexfile')[environment]
 var connection = require('knex')(config)
 
 module.exports = {
-  getStudentProfile
+  getStudentProfile,
+  getTeacherProfile
 }
 
 function getStudentProfile(id) {
@@ -17,6 +18,23 @@ function getStudentProfile(id) {
   return studentData
 }
 
+function getTeacherProfile(id) {
+  var db = connection
+  var teacherData = db('teachers')
+    .join('coordinator', 'coordinator.teacher_ID', '=', 'teacher.id')
+    .join('activity', 'coordinator.activity_ID', '=', 'activity.id')
+    .where('teacher.id', id)
+    .select('teacher.id', 'first_name', 'last_name', 'email', 'phone', 'activity_name')
+}
+
+function getActivityDetails(){
+  var db = connection
+  var acitivityData = db('teachers')
+  .join('coordinator', 'coordinator.teacher_ID', '=', 'teacher.id')
+  .join('activity', 'coordinator.activity_ID', '=', 'activity.id')
+  .join('memberships', 'activity.id', '=', 'activity_ID')
+  .join('students', 'student.id', '=', 'student_ID')
+}
 
 //Retrieve Student Data from Knex DB
   // 1. require knex package -
