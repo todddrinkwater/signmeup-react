@@ -4,7 +4,7 @@ module.exports = function Login(props) {
   return (
     <div className="login">
       <h1>Welcome to Sign Me Up!</h1>
-      <h4>Sign In</h4>
+      <h4>Sign In to Sign Up</h4>
         <form action="#" method="post">
           <ul>
             <li>
@@ -19,7 +19,7 @@ module.exports = function Login(props) {
             Password: <input type="text" name="password" />
             </li>
           </ul>
-        <input type="submit" value="Log In" />
+        <a href="/StudentProfile"><input type="submit" value="Log In" /></a>
         </form>
     </div>
   )

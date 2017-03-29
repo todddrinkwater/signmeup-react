@@ -5,7 +5,7 @@ var AllStudents = require('./StudentProfile')
 
 const router = sheetRouter({ default: '/' }, [
   ['/', () => Login],
-  ['/studentprofile', () => AllStudents]
+  ['/StudentProfile', () => AllStudents]
 ])
 
 module.exports = function App(props) {
