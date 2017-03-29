@@ -27,13 +27,15 @@ function getTeacherProfile(id) {
     .select('teacher.id', 'first_name', 'last_name', 'email', 'phone', 'activity_name')
 }
 
-function getActivityDetails(){
+function getActivityDetails(id){
   var db = connection
   var acitivityData = db('teachers')
   .join('coordinator', 'coordinator.teacher_ID', '=', 'teacher.id')
   .join('activity', 'coordinator.activity_ID', '=', 'activity.id')
   .join('memberships', 'activity.id', '=', 'activity_ID')
   .join('students', 'student.id', '=', 'student_ID')
+  .where('student.id', id)
+  .select('students.first_name', 'students.last_name')
 }
 
 //Retrieve Student Data from Knex DB

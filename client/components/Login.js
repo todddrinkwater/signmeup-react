@@ -1,4 +1,5 @@
 var React = require('react')
+var Link = require('react-router-dom').Link
 
 module.exports = function Login(props) {
   return (
@@ -19,7 +20,7 @@ module.exports = function Login(props) {
             Password: <input type="text" name="password" />
             </li>
           </ul>
-        <a href="/StudentProfile"><input type="submit" value="Log In" /></a>
+        <Link to="/student-profile/1"><input type="submit" value="Log In" /></Link>
         </form>
     </div>
   )

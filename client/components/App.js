@@ -1,23 +1,20 @@
 var React = require('react')
-const sheetRouter = require('sheet-router')
+var Route = require('react-router-dom').Route
+var Router = require('react-router-dom').HashRouter
 var Login = require('./Login')
-var AllStudents = require('./StudentProfile')
-
-const router = sheetRouter({ default: '/' }, [
-  ['/', () => Login],
-  ['/StudentProfile', () => AllStudents]
-])
+var StudentProfile = require('./StudentProfile')
 
 module.exports = function App(props) {
-    var currentPath = props.path
-    var MainComponent = router(currentPath)
   return (
-    <div>
-      <div className='navbar'>
-        <a href='/login'> Login</a> |
-        <a href='/about'> About</a>
+    <Router>
+      <div>
+        <div className='navbar'>
+          <a href='/login'> Login</a> |
+          <a href='/about'> About</a>
+        </div>
+        <Route exact path='/' component={Login} />
+        <Route path='/student-profile/:id' component={StudentProfile} />
       </div>
-      <div>{MainComponent(props)}</div>
-    </div>
+    </Router>
   )
 }
