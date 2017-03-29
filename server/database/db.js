@@ -1,5 +1,5 @@
 var environment = process.env.NODE_ENV || 'development'
-var config = require('../knexfile')[environment]
+var config = require('../../knexfile')[environment]
 var connection = require('knex')(config)
 
 module.exports = {
@@ -21,30 +21,22 @@ function getStudentProfile(id) {
 function getTeacherProfile(id) {
   var db = connection
   var teacherData = db('teachers')
-    .join('coordinator', 'coordinator.teacher_ID', '=', 'teacher.id')
+    .join('coordinator', 'coordinator.teacher_ID', '=', 'teachers.id')
     .join('activity', 'coordinator.activity_ID', '=', 'activity.id')
-    .where('teacher.id', id)
-    .select('teacher.id', 'first_name', 'last_name', 'email', 'phone', 'activity_name')
+    .select('first_name', 'last_name', 'email', 'phone', 'activity_name')
+    .where('teachers.id', id)
+    .first()
+  return teacherData
 }
 
 function getActivityDetails(id){
   var db = connection
-  var acitivityData = db('teachers')
-  .join('coordinator', 'coordinator.teacher_ID', '=', 'teacher.id')
+  var activityData = db('teachers')
+  .join('coordinator', 'coordinator.teacher_ID', '=', 'teachers.id')
   .join('activity', 'coordinator.activity_ID', '=', 'activity.id')
   .join('memberships', 'activity.id', '=', 'activity_ID')
   .join('students', 'student.id', '=', 'student_ID')
-  .where('student.id', id)
   .select('students.first_name', 'students.last_name')
+  .where('student.id', id)
+  return activityData
 }
-
-//Retrieve Student Data from Knex DB
-  // 1. require knex package -
-    //   var config = require('./knexfile')[environment]
-    // var connection = require('knex')(config)
-    // will be required in db.js
-  // 2. Create a function to retrive knex database file
-  // 2a. Function will grab a students ID to display through a param
-  // 2b. Function will link tables using a using where and use join to join tables.
-  // 2c. Function will use select to target the fields I want to display.
-  // 3.
