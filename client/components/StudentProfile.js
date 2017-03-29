@@ -41,6 +41,7 @@ var StudentProfile = React.createClass({
           <li>Email: {this.state.profile.email}</li>
           <li>Phone: {this.state.profile.phone}</li>
         </ul>
+        <a href='/'>Sign Out</a> 
       </div>
     )
   }
