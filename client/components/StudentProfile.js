@@ -8,7 +8,9 @@ var StudentProfile = React.createClass({
       profile: {
         firstName: '',
         lastName: '',
-        activity: ''
+        activity: '',
+        email: ' ',
+        phone: ' '
       }
     }
   },
@@ -21,7 +23,9 @@ var StudentProfile = React.createClass({
           profile: {
             firstName: result.first_name,
             lastName: result.last_name,
-            activity: result.activity_name
+            activity: result.activity_name,
+            email: result.email,
+            phone: result.phone
           }
         })
       }
@@ -34,6 +38,8 @@ var StudentProfile = React.createClass({
         <h1>Hello {this.state.profile.firstName} {this.state.profile.lastName} !</h1>
         <ul>
           <li>Activity: {this.state.profile.activity}</li>
+          <li>Email: {this.state.profile.email}</li>
+          <li>Phone: {this.state.profile.phone}</li>
         </ul>
       </div>
     )

@@ -13,7 +13,7 @@ function getStudentProfile(id) {
       .join('memberships', 'memberships.student_ID', '=', 'students.id')
       .join('activity', 'memberships.activity_ID', '=', 'activity.id')
       .where('students.id', id)
-      .select('students.id', 'first_name', 'last_name', 'activity_name')
+      .select('students.id', 'first_name', 'last_name', 'activity_name', 'students.email', 'students.phone')
       .first()
   return studentData
 }
