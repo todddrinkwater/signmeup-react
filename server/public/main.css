@@ -31,11 +31,11 @@ input[type=text], select {
 }
 
 input[type=submit]{
-  width: 100%;
+  width: 20%;
   background-color: #54c79e;
   color: white;
   padding: 14px 20px;
-  margin: 50px auto;
+  margin: 50px 200px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -47,7 +47,7 @@ select {
 }
 
 .login {
-  display: flex;
+  display: flex-wrap;
   list-style-type: none;
   text-align: center;
 }
