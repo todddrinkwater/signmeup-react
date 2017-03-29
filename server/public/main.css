@@ -22,7 +22,7 @@ h1 {
 /*  - - -    Input Fields & Login  - - - */
 
 input[type=text], select {
-  width: 50%;
+  width: 30%;
   padding: 12px 20px;
   margin: auto;
   border: 1px solid #ccc;
@@ -44,6 +44,7 @@ input[type=submit]{
 select {
   margin: 5% 0 5% 0;
   padding: 5% 0 5% 0;
+  width: 20%;
 }
 
 .login {
@@ -54,4 +55,9 @@ select {
 
 .login li {
   list-style-type: none;
+}
+
+.login ul {
+  margin: 0;
+  padding: 0;
 }
