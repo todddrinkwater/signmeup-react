@@ -14,7 +14,7 @@ module.exports = function Login(props) {
             </select>
             </li>
             <li>
-              ID:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="id" />
+              ID / Email:<input type="text" name="id" />
             </li>
             <li>
             Password: <input type="text" name="password" />
